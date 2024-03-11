@@ -8,3 +8,4 @@ cd fuzzy/
 chmod +x test.sh
 ./test.sh
 ```
+Edit test.sh file with all the location of wordlists before running tool.
