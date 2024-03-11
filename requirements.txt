@@ -1,0 +1,6 @@
+Go lang installed
+
+httpx installed with its path exported to /usr/bin
+
+wordlists files
+
