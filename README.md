@@ -1,6 +1,9 @@
 # HoaxHound
+Cybersquatting detection using Permutation & Combination , through providing desired wordlist
+
 
 Currently this tool is only available on linux OS.
+
 
 Installation Guide
 
