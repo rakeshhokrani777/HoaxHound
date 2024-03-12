@@ -12,4 +12,4 @@ chmod +x install.sh fuzzy.sh
 ./fuzzy.sh
 ```
 
-Edit fuzzy.sh file with all the location of wordlists before running tool.
+**Note**: Edit fuzzy.sh file with all the location of wordlists before running tool.
