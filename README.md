@@ -1,5 +1,7 @@
 # fuzzy
 
+Currently this tool is only available on linux OS.
+
 Installation Guide
 
 ```sh
