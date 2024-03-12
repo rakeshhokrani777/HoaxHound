@@ -1,11 +1,13 @@
 # fuzzy
 
-Complete the requirements as per requirement.txt
+Installation Guide
 
 ```sh
 git clone https://github.com/rakeshhokrani777/fuzzy.git
 cd fuzzy/
-chmod +x test.sh
-./test.sh
+chmod +x install.sh fuzzy.sh
+./install.sh
+./fuzzy.sh
 ```
-Edit test.sh file with all the location of wordlists before running tool.
+
+Edit fuzzy.sh file with all the location of wordlists before running tool.
