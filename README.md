@@ -1,4 +1,4 @@
-# fuzzy
+# HoaxHound
 
 Currently this tool is only available on linux OS.
 
