@@ -15,6 +15,9 @@ git clone https://github.com/rakeshhokrani777/HoaxHound.git
 cd fuzzy/
 ```
 ```sh
+pip3 install -r requirements.txt  ||  pip install -r requirements.txt
+```
+```sh
 chmod +x install.sh fuzzy.sh
 ```
 ```sh
