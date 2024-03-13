@@ -43,6 +43,76 @@ while IFS= read -r prefix; do
     done < "$suffix_wordlist"
 done < "$prefix_wordlist"
 
+# Additional fuzzing combinations
+while IFS= read -r prefix; do
+    prefix=$(echo "$prefix" | tr -d '[:space:]')  # Trim whitespace
+    for common_word in $(cat "$common_wordlist"); do
+        for domain in $(cat "$domain_wordlist"); do
+            # Prepare the URL
+            final_string="${prefix}${common_word}.${domain}"
+            # Write output to file and display on screen
+            write_output "$final_string"
+        done
+    done
+done < "$prefix_wordlist"
+
+while IFS= read -r suffix; do
+    suffix=$(echo "$suffix" | tr -d '[:space:]')  # Trim whitespace
+    for common_word in $(cat "$common_wordlist"); do
+        for domain in $(cat "$domain_wordlist"); do
+            # Prepare the URL
+            final_string="${common_word}${suffix}.${domain}"
+            # Write output to file and display on screen
+            write_output "$final_string"
+        done
+    done
+done < "$suffix_wordlist"
+
+while IFS= read -r prefix; do
+    prefix=$(echo "$prefix" | tr -d '[:space:]')  # Trim whitespace
+    while IFS= read -r suffix; do
+        suffix=$(echo "$suffix" | tr -d '[:space:]')  # Trim whitespace
+        for common_word in $(cat "$common_wordlist"); do
+            for domain in $(cat "$domain_wordlist"); do
+                # Prepare the URL
+                final_string="${prefix}${common_word}${suffix}.${domain}"
+                # Write output to file and display on screen
+                write_output "$final_string"
+            done
+        done
+    done < "$suffix_wordlist"
+done < "$prefix_wordlist"
+
+while IFS= read -r prefix; do
+    prefix=$(echo "$prefix" | tr -d '[:space:]')  # Trim whitespace
+    while IFS= read -r common_word; do
+        common_word=$(echo "$common_word" | tr -d '[:space:]')  # Trim whitespace
+        for suffix in $(cat "$suffix_wordlist"); do
+            for domain in $(cat "$domain_wordlist"); do
+                # Prepare the URL
+                final_string="${prefix}${common_word}${suffix}.${domain}"
+                # Write output to file and display on screen
+                write_output "$final_string"
+            done
+        done
+    done < "$common_wordlist"
+done < "$prefix_wordlist"
+
+while IFS= read -r common_word; do
+    common_word=$(echo "$common_word" | tr -d '[:space:]')  # Trim whitespace
+    while IFS= read -r suffix; do
+        suffix=$(echo "$suffix" | tr -d '[:space:]')  # Trim whitespace
+        for prefix in $(cat "$prefix_wordlist"); do
+            for domain in $(cat "$domain_wordlist"); do
+                # Prepare the URL
+                final_string="${prefix}${common_word}${suffix}.${domain}"
+                # Write output to file and display on screen
+                write_output "$final_string"
+            done
+        done
+    done < "$suffix_wordlist"
+done < "$common_wordlist"
+
 echo "Output saved to $output_file"
 
 # Check status using httpx
