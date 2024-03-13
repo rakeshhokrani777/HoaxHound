@@ -8,7 +8,7 @@ Currently this tool is only available on linux OS.
 Installation Guide
 
 ```sh
-git clone https://github.com/rakeshhokrani777/fuzzy.git
+git clone https://github.com/rakeshhokrani777/HoaxHound.git
 cd fuzzy/
 chmod +x install.sh fuzzy.sh
 ./install.sh
