@@ -7,7 +7,7 @@ domain_wordlist="/home/kali/domain.txt"
 common_wordlist="/home/kali/common.txt"
 
 # Output file with date and time
-current_date_time=$(date +'%Y-%m-%d_%H-%M-%S')
+current_date_time=$(date +'%Y-%m-%d_%H:%M:%S')
 output_file="output_${current_date_time}.txt"
 
 # HTTPX output file with date and time
