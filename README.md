@@ -12,19 +12,19 @@ Installation Guide
 git clone https://github.com/rakeshhokrani777/HoaxHound.git
 ```
 ```sh
-cd fuzzy/
+cd HoaxHound/
 ```
 ```sh
 pip3 install -r requirements.txt  ||  pip install -r requirements.txt
 ```
 ```sh
-chmod +x install.sh fuzzy.sh
+chmod +x install.sh run.sh
 ```
 ```sh
 ./install.sh
 ```
 ```sh
-./fuzzy.sh
+./run.sh
 ```
 
-**Note**: Edit fuzzy.sh file with all the locations of wordlists before running tool.
+**Note**: Edit run.sh file with all the locations of wordlists before running tool.
