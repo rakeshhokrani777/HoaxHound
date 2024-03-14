@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Define absolute paths to wordlist files
-prefix_wordlist="/home/kali/wordlist.txt"
-suffix_wordlist="/home/kali/wordy.txt"
-domain_wordlist="/home/kali/domain.txt"
-common_wordlist="/home/kali/common.txt"
+prefix_wordlist="/home/rakesh/wordlist"
+suffix_wordlist="/home/rakesh/wordy"
+domain_wordlist="/home/rakesh/domain"
+common_wordlist="/home/rakesh/common"
 
 # Output file with date and time
 current_date_time=$(date +'%Y-%m-%d_%H:%M:%S')
@@ -18,7 +18,7 @@ write_output() {
     echo "$1" | tee -a "$output_file"
 }
 
-# Fuzz common wordlist with specified domains
+# 1.Fuzz common wordlist with specified domains
 while IFS= read -r common_word; do
     common_word=$(echo "$common_word" | tr -d '[:space:]')  # Trim whitespace
     for domain in $(cat "$domain_wordlist"); do
@@ -29,7 +29,7 @@ while IFS= read -r common_word; do
     done
 done < "$common_wordlist"
 
-# Fuzz prefix and suffix with wordlists
+# 2.Fuzz prefix and suffix with wordlists
 while IFS= read -r prefix; do
     prefix=$(echo "$prefix" | tr -d '[:space:]')  # Trim whitespace
     while IFS= read -r suffix; do
@@ -43,7 +43,7 @@ while IFS= read -r prefix; do
     done < "$suffix_wordlist"
 done < "$prefix_wordlist"
 
-# Fuzz prefix with common wordlist and suffix with domain
+# 3.Fuzz prefix with common wordlist and suffix with domain
 while IFS= read -r prefix; do
     prefix=$(echo "$prefix" | tr -d '[:space:]')  # Trim whitespace
     while IFS= read -r common_word; do
@@ -57,7 +57,7 @@ while IFS= read -r prefix; do
     done < "$common_wordlist"
 done < "$prefix_wordlist"
 
-# Fuzz common word with suffix from wordlists and prefix with domain
+# 4.Fuzz common word with suffix from wordlists and prefix with domain
 while IFS= read -r common_word; do
     common_word=$(echo "$common_word" | tr -d '[:space:]')  # Trim whitespace
     while IFS= read -r suffix; do
@@ -71,7 +71,7 @@ while IFS= read -r common_word; do
     done < "$suffix_wordlist"
 done < "$common_wordlist"
 
-# Fuzz prefix, suffix, and common word with domain
+# 5.Fuzz prefix, suffix, and common word with domain
 while IFS= read -r prefix; do
     prefix=$(echo "$prefix" | tr -d '[:space:]')  # Trim whitespace
     while IFS= read -r suffix; do
@@ -87,7 +87,7 @@ while IFS= read -r prefix; do
     done < "$suffix_wordlist"
 done < "$prefix_wordlist"
 
-# Fuzz prefix and suffix with common wordlist and domain
+# 6.Fuzz prefix and suffix with common wordlist and domain
 while IFS= read -r prefix; do
     prefix=$(echo "$prefix" | tr -d '[:space:]')  # Trim whitespace
     while IFS= read -r suffix; do
@@ -103,7 +103,7 @@ while IFS= read -r prefix; do
     done < "$suffix_wordlist"
 done < "$prefix_wordlist"
 
-# Fuzz common wordlist with prefix and suffix and domain
+# 7.Fuzz common wordlist with prefix and suffix and domain
 while IFS= read -r common_word; do
     common_word=$(echo "$common_word" | tr -d '[:space:]')  # Trim whitespace
     while IFS= read -r prefix; do
@@ -120,7 +120,7 @@ while IFS= read -r common_word; do
     done < "$prefix_wordlist"
 done < "$common_wordlist"
 
-# Fuzz prefix and suffix with wordlists
+# 8.Fuzz prefix and suffix with wordlists
 while IFS= read -r prefix; do
     prefix=$(echo "$prefix" | tr -d '[:space:]')  # Trim whitespace
     while IFS= read -r suffix; do
@@ -134,7 +134,7 @@ while IFS= read -r prefix; do
     done < "$suffix_wordlist"
 done < "$prefix_wordlist"
 
-# Fuzz prefix with common wordlist and suffix with domain
+# 9.Fuzz prefix with common wordlist and suffix with domain
 while IFS= read -r prefix; do
     prefix=$(echo "$prefix" | tr -d '[:space:]')  # Trim whitespace
     while IFS= read -r common_word; do
@@ -148,7 +148,7 @@ while IFS= read -r prefix; do
     done < "$common_wordlist"
 done < "$prefix_wordlist"
 
-# Fuzz common word with suffix from wordlists and prefix with domain
+# 10.Fuzz common word with suffix from wordlists and prefix with domain
 while IFS= read -r common_word; do
     common_word=$(echo "$common_word" | tr -d '[:space:]')  # Trim whitespace
     while IFS= read -r suffix; do
@@ -162,7 +162,7 @@ while IFS= read -r common_word; do
     done < "$suffix_wordlist"
 done < "$common_wordlist"
 
-# Fuzz common wordlist with prefix and suffix and domain
+# 11.Fuzz common wordlist with prefix and suffix and domain
 while IFS= read -r common_word; do
     common_word=$(echo "$common_word" | tr -d '[:space:]')  # Trim whitespace
     while IFS= read -r prefix; do
@@ -179,7 +179,7 @@ while IFS= read -r common_word; do
     done < "$prefix_wordlist"
 done < "$common_wordlist"
 
-# Fuzz prefix, suffix, and common word with domain
+# 12.Fuzz prefix, suffix, and common word with domain
 while IFS= read -r prefix; do
     prefix=$(echo "$prefix" | tr -d '[:space:]')  # Trim whitespace
     while IFS= read -r suffix; do
@@ -195,7 +195,7 @@ while IFS= read -r prefix; do
     done < "$suffix_wordlist"
 done < "$prefix_wordlist"
 
-# Fuzz prefix and suffix with common wordlist and domain
+# 13.Fuzz prefix and suffix with common wordlist and domain
 while IFS= read -r prefix; do
     prefix=$(echo "$prefix" | tr -d '[:space:]')  # Trim whitespace
     while IFS= read -r suffix; do
@@ -211,7 +211,7 @@ while IFS= read -r prefix; do
     done < "$suffix_wordlist"
 done < "$prefix_wordlist"
 
-# Fuzz prefix and suffix with wordlists
+# 14.Fuzz prefix and suffix with wordlists
 while IFS= read -r prefix; do
     prefix=$(echo "$prefix" | tr -d '[:space:]')  # Trim whitespace
     while IFS= read -r suffix; do
@@ -225,7 +225,7 @@ while IFS= read -r prefix; do
     done < "$suffix_wordlist"
 done < "$prefix_wordlist"
 
-# Fuzz prefix with common wordlist and suffix with domain
+# 15.Fuzz prefix with common wordlist and suffix with domain
 while IFS= read -r prefix; do
     prefix=$(echo "$prefix" | tr -d '[:space:]')  # Trim whitespace
     while IFS= read -r common_word; do
@@ -239,7 +239,7 @@ while IFS= read -r prefix; do
     done < "$common_wordlist"
 done < "$prefix_wordlist"
 
-# Fuzz common word with suffix from wordlists and prefix with domain
+# 16.Fuzz common word with suffix from wordlists and prefix with domain
 while IFS= read -r common_word; do
     common_word=$(echo "$common_word" | tr -d '[:space:]')  # Trim whitespace
     while IFS= read -r suffix; do
@@ -253,7 +253,7 @@ while IFS= read -r common_word; do
     done < "$suffix_wordlist"
 done < "$common_wordlist"
 
-# Fuzz common wordlist with prefix and suffix and domain
+# 17.Fuzz common wordlist with prefix and suffix and domain
 while IFS= read -r common_word; do
     common_word=$(echo "$common_word" | tr -d '[:space:]')  # Trim whitespace
     while IFS= read -r prefix; do
@@ -270,7 +270,7 @@ while IFS= read -r common_word; do
     done < "$prefix_wordlist"
 done < "$common_wordlist"
 
-# Fuzz prefix, suffix, and common word with domain
+# 18.Fuzz prefix, suffix, and common word with domain
 while IFS= read -r prefix; do
     prefix=$(echo "$prefix" | tr -d '[:space:]')  # Trim whitespace
     while IFS= read -r suffix; do
@@ -286,7 +286,7 @@ while IFS= read -r prefix; do
     done < "$suffix_wordlist"
 done < "$prefix_wordlist"
 
-# Fuzz prefix and suffix with common wordlist and domain
+# 19.Fuzz prefix and suffix with common wordlist and domain
 while IFS= read -r prefix; do
     prefix=$(echo "$prefix" | tr -d '[:space:]')  # Trim whitespace
     while IFS= read -r suffix; do
@@ -310,3 +310,4 @@ echo "Output saved to $output_file"
 # Check status using httpx
 echo "Checking status using httpx..."
 cat "$output_file" | httpx -sc -fr -title | tee -a "$httpx_output_file"
+
