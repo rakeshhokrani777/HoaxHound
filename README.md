@@ -26,5 +26,8 @@ chmod +x install.sh run.sh
 ```sh
 ./run.sh
 ```
+In ```extract_urls.py``` edit the file location.
+
+```extract_urls.py``` is used to extract urls from web archieve wayback machine result produced. First save the displayed result of wayback machine in txt file save its location with filename in ```extract_urls.py``` file using your editor.
 
 **Note**: Edit run.sh file with all the locations of wordlists before running tool.
