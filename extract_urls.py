@@ -16,7 +16,7 @@ def extract_domains_from_file(file_path):
         return extract_domains_from_text(text)
 
 # Provide the path to your text file containing URLs
-file_path = "/home/kali/urls"
+file_path = "/home/kali/urls"                           # Edit your file with its location.
 
 # Extract domain names from the file
 domains = extract_domains_from_file(file_path)
